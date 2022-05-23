@@ -16,11 +16,12 @@ set(GLFW_GLAD_GL ${GLFW_DEPS_INCLUDE_DIR}/glad/gl.h ${GLFW_DEPS_INCLUDE_DIR}/gla
 
 add_subdirectory(${GLFW_DIR})
 
-add_executable(learn-opengl WIN32 src/main.c ${GLFW_GLAD_GL})
+add_executable(learn-opengl #[[WIN32]] src/main.c ${GLFW_GLAD_GL})
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${GLFW_INCLUDE_DIRS} ${GLFW_DEPS_INCLUDE_DIR})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${GLFW_NAME})
 
+#[[
 # Main
 if (MSVC)
     # Tell MSVC to use main instead of WinMain
@@ -29,6 +30,7 @@ elseif (CMAKE_C_SIMULATE_ID STREQUAL "MSVC")
     # Tell Clang using MS CRT to use main instead of WinMain
     set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "-Wl,/entry:mainCRTStartup")
 endif()
+]]
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
