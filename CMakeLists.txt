@@ -16,7 +16,7 @@ set(GLFW_GLAD_GL ${GLFW_DEPS_INCLUDE_DIR}/glad/gl.h ${GLFW_DEPS_INCLUDE_DIR}/gla
 
 add_subdirectory(${GLFW_DIR})
 
-add_executable(learn-opengl #[[WIN32]] src/main.c ${GLFW_GLAD_GL})
+add_executable(learn-opengl #[[WIN32]] src/main.c src/file.c src/shader.c ${GLFW_GLAD_GL})
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${GLFW_INCLUDE_DIRS} ${GLFW_DEPS_INCLUDE_DIR})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${GLFW_NAME})

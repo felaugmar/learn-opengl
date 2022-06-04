@@ -1,6 +1,14 @@
 {
     "files.associations": {
         "glfw3.h": "c",
-        "xlocale": "c"
-    }
+        "xlocale": "c",
+        "cmath": "c",
+        "initializer_list": "c",
+        "type_traits": "c",
+        "xstring": "c",
+        "xutility": "c",
+        "stdio.h": "c",
+        "math.h": "c"
+    },
+    "files.insertFinalNewline": true
 }
